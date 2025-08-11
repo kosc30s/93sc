@@ -6,7 +6,7 @@ The next code is a confirmation mail in HTML, I need you to turn it more sofisti
 {% endif %}
 
 {% capture email_title %}
-<span style="font-family: Arial; font-size: 18px;">
+<span style="font-family: Helvetica; font-size: 18px;">
   {% if has_pending_payment %}
     Thank you for your order!
   {% else %}
@@ -72,8 +72,38 @@ The next code is a confirmation mail in HTML, I need you to turn it more sofisti
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
   <style>
+    /* Global typography */
+    body, table, td, p, h1, h2, h3, h4, h5, h6, span, strong, em, small {
+      font-family: Helvetica !important;
+      color: #2c2f96;
+    }
+
+    /* Layout base colors remain readable */
+    body { background-color: #ffffff; }
+    .header__cell, .footer__cell { background-color: #ffffff; }
+
+    /* Buttons and links */
     .button__cell { background: #2c2f96; }
+    .button__text { color: #ffffff !important; text-decoration: none; font-weight: bold; }
     a, a:hover, a:active, a:visited { color: #2c2f96; }
+
+    /* Titles hierarchy */
+    h1 { font-size: 28px; font-weight: 700; margin: 0 0 12px; }
+    h2 { font-size: 22px; font-weight: 700; margin: 16px 0 8px; }
+    h3 { font-size: 18px; font-weight: 700; margin: 16px 0 8px; }
+    h4 { font-size: 15px; font-weight: 700; margin: 12px 0 6px; }
+    p, li { font-size: 14px; line-height: 1.6; color: #2c2f96; }
+
+    /* Tables and dividers */
+    .row.section h3, .row.content h2 { color: #2c2f96; }
+    .subtotal-table__line, .order-list__delivery-method-type-separator { border-color: #2c2f96; }
+
+    /* Badges and labels */
+    .order-list__item-refunded { color: #2c2f96; font-weight: bold; }
+    .order-list__item-discount-allocation span { color: #2c2f96; }
+
+    /* Secondary text legibility */
+    .disclaimer__subtext, .subtotal-line__value-small, .total-discount--amount { color: #2c2f96; }
   </style>
 </head>
 
@@ -100,8 +130,8 @@ The next code is a confirmation mail in HTML, I need you to turn it more sofisti
 
 <tr>
   <td class="shop-name__cell" style="padding: 0;">
-    <h1 class="shop-name__text" style="font-family: Arial; font-weight: bold; font-size: 20px; margin: 0;">
-      <a href="{{ shop.url }}" style="text-decoration: none; color: #000000;">
+    <h1 class="shop-name__text" style="font-family: Helvetica; font-weight: bold; font-size: 20px; margin: 0;">
+      <a href="{{ shop.url }}" style="text-decoration: none; color: #2c2f96;">
         93 SIERRA/CROSSES
       </a>
     </h1>
