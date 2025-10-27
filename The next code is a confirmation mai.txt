@@ -6,7 +6,7 @@ The next code is a confirmation mail in HTML, I need you to turn it more sofisti
 {% endif %}
 
 {% capture email_title %}
-<span style="font-family: Arial; font-size: 18px;">
+<span style="font-family: Helvetica; font-size: 18px;">
   {% if has_pending_payment %}
     Thank you for your order!
   {% else %}
@@ -72,12 +72,50 @@ The next code is a confirmation mail in HTML, I need you to turn it more sofisti
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="/assets/notifications/styles.css">
   <style>
-    .button__cell { background: #2c2f96; }
-    a, a:hover, a:active, a:visited { color: #2c2f96; }
+    /* Base typography */
+    body, table, td, p, h1, h2, h3, h4, h5, h6, span, strong, em, small { font-family: Helvetica !important; }
+    body, p, li, td { color: #222222; }
+
+    /* Brand color accents */
+    a, a:hover, a:active, a:visited { color: #2c2f96 !important; }
+    h1, h2, h3, h4 { color: #2c2f96; }
+
+    /* Layout */
+    body { background-color: #f7f8fc; }
+    .header__cell { background-color: #f2f3fb; border-bottom: 2px solid #2c2f96; }
+    .content__cell { background-color: #ffffff; border: 1px solid #e6e8f2; border-radius: 10px; padding: 24px !important; }
+    .section__cell { background-color: #ffffff; border: 1px solid #e6e8f2; border-radius: 10px; padding: 20px !important; }
+    .footer__cell { background-color: #ffffff; border-top: 2px solid #2c2f96; }
+
+    /* Buttons */
+    .button__cell { background: #2c2f96; border-radius: 6px; }
+    .button__text { color: #ffffff !important; text-decoration: none; font-weight: 700; letter-spacing: 0.3px; }
+
+    /* Headings */
+    h1 { font-size: 28px; font-weight: 700; margin: 0 0 12px; }
+    h2 { font-size: 22px; font-weight: 700; margin: 16px 0 8px; }
+    h3 { font-size: 18px; font-weight: 700; margin: 16px 0 8px; }
+    h4 { font-size: 15px; font-weight: 700; margin: 12px 0 6px; }
+    p, li { font-size: 14px; line-height: 1.6; }
+
+    /* Tables and dividers */
+    .subtotal-table__line, .order-list__delivery-method-type-separator { border-color: #e6e8f2; }
+    .order-number__text { color: #2c2f96; font-weight: 700; }
+
+    /* Notices */
+    .order-list__item-refunded { color: #2c2f96; font-weight: bold; }
+    .order-list__item-discount-allocation span { color: #2c2f96; }
+
+    /* Small prints */
+    .disclaimer__subtext, .subtotal-line__value-small, .total-discount--amount { color: #666666; }
+
+    /* Preheader */
+    .preheader { display: none !important; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0; mso-hide: all; overflow: hidden; }
   </style>
 </head>
 
   <body>
+    <span class="preheader">Your order is confirmed. We'll notify you when it's on the way.</span>
     <table class="body">
       <tr>
         <td>
@@ -100,8 +138,8 @@ The next code is a confirmation mail in HTML, I need you to turn it more sofisti
 
 <tr>
   <td class="shop-name__cell" style="padding: 0;">
-    <h1 class="shop-name__text" style="font-family: Arial; font-weight: bold; font-size: 20px; margin: 0;">
-      <a href="{{ shop.url }}" style="text-decoration: none; color: #000000;">
+    <h1 class="shop-name__text" style="font-family: Helvetica; font-weight: bold; font-size: 20px; margin: 0;">
+      <a href="{{ shop.url }}" style="text-decoration: none; color: #2c2f96;">
         93 SIERRA/CROSSES
       </a>
     </h1>
